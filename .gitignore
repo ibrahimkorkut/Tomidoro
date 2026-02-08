@@ -1,0 +1,15 @@
+# Bağımlılıklar
+node_modules/
+
+# Build çıktıları (Büyük dosyalar burada)
+dist/
+dist_electron/
+
+# Loglar ve geçici dosyalar
+build.log
+*.log
+npm-debug.log*
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db

@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+@font-face {
+  font-family: 'Chandia';
+  src: url('./assets/fonts/Chandia_PERSONAL_USE_ONLY.otf') format('opentype');
+}
+
+:root {
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-hand: 'Chandia', cursive;
+
+  /* Palette Colors (Estimated from Color Hunt 255158) */
+  --palette-green: #2C5F2D;
+  --palette-rust: #C83627;
+  --palette-orange: #E99354;
+  --palette-cream: #F2EAD0;
+
+  --color-bg: #121212;
+  --color-surface: rgba(0, 0, 0, 0.4);
+  /* Darker surface for contrast against bright gradient */
+
+  --color-text-primary: var(--palette-cream);
+  --color-text-secondary: rgba(242, 234, 208, 0.6);
+
+  /* Mode Colors */
+  --color-pomodoro: var(--palette-rust);
+  --color-short: #ff4800;
+  --color-long: #FAB95B;
+  --color-custom: #37A552;
+
+  --transition-speed: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-main);
+  /* Flowy Sliding Red to Green (Ping Pong) */
+  background: linear-gradient(90deg, #D93025, #34A853);
+  background-size: 200% 200%;
+  animation: slideRedToGreen 5s ease infinite alternate;
+  color: var(--color-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes slideRedToGreen {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.watermark {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  z-index: 100;
+  pointer-events: none;
+  /* Container generally non-interactive */
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+  /* Enable clicking on icons */
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.author-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Apple Liquid Glass Effect */
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 40px;
+  padding: 3rem;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, border-color;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Subtle glow behind the container */
+/* Enhanced Inner Glow/Reflection */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px;
+  border-radius: 99px;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border-radius: 99px;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, background, box-shadow;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--palette-cream);
+}
+
+/* Active State - Matches User's "Image 1" style (Solid color) */
+.tab-btn.active {
+  background: var(--theme-color);
+  color: var(--palette-cream);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transform: translateZ(0) scale(1.02);
+  filter: blur(0);
+}
+
+.timer-display h1 {
+  font-size: 6.5rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  user-select: none;
+  color: var(--palette-cream);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.control-btn {
+  color: var(--palette-cream);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+.control-btn.big {
+  width: 80px;
+  height: 80px;
+  border-radius: 32px;
+  background: var(--theme-color);
+  color: var(--palette-cream);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn.big:hover {
+  filter: brightness(1.1);
+}
+
+.control-btn.small {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.control-btn svg {
+  stroke-width: 2.5px;
+}
