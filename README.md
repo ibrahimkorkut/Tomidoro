@@ -1,64 +1,64 @@
 # 🍅 Tomidoro
 
-Tomidoro, modern tasarımı ve kullanıcı dostu arayüzü ile odaklanmanıza yardımcı olan bir Pomodoro zamanlayıcısıdır. Electron ve React kullanılarak geliştirilmiştir.
+Tomidoro is a modern, sleek Pomodoro timer designed to help you stay focused and productive. Built with Electron and React, it features a premium user interface with beautiful aesthetics.
 
 ![Tomidoro Screenshot](screenshots/tomidoroscreenshot1.png)
 
-## ✨ Özellikler
+## ✨ Features
 
-- **Modern Tasarım**: Glassmorphism ve canlı renk geçişleri ile şık bir görünüm.
-- **Esnek Modlar**: Pomodoro, Kısa Mola (Short Break), Uzun Mola (Long Break) ve Özel (Custom) modları.
-- **Sesli Uyarı**: Süre bittiğinde sizi uyaran alarm sistemi.
-- **Ayarlanabilir Zamanlayıcı**: İhtiyacınıza göre süreleri özelleştirebilme.
-- **Cross-Platform**: Windows üzerinde çalışan masaüstü uygulaması.
+- **Modern Design**: Premium aesthetics featuring glassmorphism, animated mesh gradients, and vibrant colors.
+- **Flexible Modes**: Support for Pomodoro, Short Break, Long Break, and Custom timer modes.
+- **Audio Notifications**: Custom alarm system to notify you when your session is complete.
+- **Customizable Timer**: Easily adjust session durations to fit your personal workflow.
+- **Cross-Platform**: A dedicated desktop application for Windows.
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Getting Started
 
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+Follow these steps to run the project locally on your machine:
 
-### Gereksinimler
+### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 veya üzeri önerilir)
-- npm veya yarn
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- npm or yarn
 
-### Adımlar
+### Installation
 
-1. Depoyu klonlayın:
+1. Clone the repository:
    ```bash
    git clone https://github.com/ibrahimkorkut/Tomidoro.git
    cd Tomidoro
    ```
 
-2. Bağımlılıkları yükleyin:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. Geliştirme modunda çalıştırın:
+3. Run in development mode:
    ```bash
    npm run dev:electron
    ```
 
-### Build (Derleme)
+### Building the Application
 
-Uygulamayı bir `.exe` dosyası haline getirmek için:
+To create a standalone `.exe` installer for Windows:
 ```bash
 npm run dist
 ```
-Çıktılar `dist_electron` klasöründe yer alacaktır.
+The output will be generated in the `dist_electron` folder.
 
-## 🛠️ Kullanılan Teknolojiler
+## 🛠️ Built With
 
-- **Frontend**: React, Vite
-- **Desktop**: Electron
-- **Styling**: Vanilla CSS (Modern CSS Properties)
-- **Linting**: ESLint
+- **Frontend**: [React](https://reactjs.org/), [Vite](https://vitejs.dev/)
+- **Desktop Framework**: [Electron](https://www.electronjs.org/)
+- **Styling**: Vanilla CSS (Modern CSS Properties & Animations)
+- **Linting**: [ESLint](https://eslint.org/)
 
-## 📸 Ekran Görüntüleri
+## 📸 Screenshots
 
-![Ayarlar](screenshots/tomidoroscreenshot2.png)
+![Settings Menu](screenshots/tomidoroscreenshot2.png)
 
-## 👤 Yapımcı
+## 👤 Author
 
 - **İbrahim Korkut** - [GitHub](https://github.com/ibrahimkorkut) | [LinkedIn](https://www.linkedin.com/in/ibrahimkorkut/)
 
