@@ -13,3 +13,6 @@ npm-debug.log*
 # İşletim sistemi dosyaları
 .DS_Store
 Thumbs.db
+
+# Executables
+*.exe
